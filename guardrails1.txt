@@ -1,0 +1,98 @@
+# Java Coding Standards (Based on Google Java Style Guide and Best Practices)
+
+1.  Indentation
+    -   Use **4 spaces** per indentation level.
+    -   Avoid tabs; use spaces for consistency.
+    -   Maximum line length: **100 characters**.
+
+2.  Whitespace
+    -   Surround operators (`=`, `+`, `<`) with single spaces: `x = 1;`, not `x=1;`.
+    -   No spaces around `=` in default arguments (not applicable in Java).
+    -   Avoid trailing whitespace or extra blank lines.
+    -   Single space after commas: `[1, 2, 3]`, not `[1,2,3]`.
+
+3.  Line Breaks and Blank Lines
+    -   **Two blank lines** before/after top-level classes and interfaces.
+    -   **One blank line** between methods in a class.
+    -   Break long lines after commas or before operators.
+    -   Avoid multiple statements on one line.
+
+4.  Naming Conventions
+    -   Variables/methods: `camelCase` (e.g., `myVariable`, `calculateSum`).
+    -   Classes: `PascalCase` (e.g., `MyClass`).
+    -   Constants: `UPPER_SNAKE_CASE` (e.g., `MAX_VALUE`).
+    -   Avoid single-letter names except for counters (`i`) or exceptions (`e`).
+    -   Use descriptive names; avoid unclear abbreviations.
+
+5.  Imports
+    -   Place imports at file top, grouped as:
+        1.  Static imports (e.g., `import static org.junit.Assert.*`).
+        2.  Third-party (e.g., `import com.google.guava.collect.Lists`).
+        3.  Java standard library (e.g., `import java.util.List`).
+        4.  Local (e.g., `import com.example.MyClass`).
+    -   One import per line: `import java.io.File;\nimport java.io.IOException;`, not `import java.io.File, java.io.IOException;`.
+    -   Avoid wildcard imports (`import package.*`).
+    -   Use fully qualified names when necessary to avoid conflicts.
+
+6.  Comments
+    -   Use `//` for single-line comments.
+    -   Use `/* ... */` for multi-line comments.
+    -   Write Javadoc comments for public classes/methods using `/** ... */`.
+    -   Javadoc should cover purpose, parameters, returns, and exceptions.
+    -   Avoid redundant inline comments.
+
+7.  String Quotes
+    -   Use double quotes (`"`) for strings.
+
+8.  Function and Method Design
+    -   Methods should have a single responsibility.
+    -   Use method overloading judiciously.
+    -   Return consistent types; avoid implicit `null` unless intentional.
+
+9.  Error Handling
+    -   Use specific exceptions: `catch (IllegalArgumentException e) {`, not `catch (Exception e) {`.
+    -   Avoid catching `Exception` or `Throwable`; they catch unintended exceptions.
+    -   Limit `try`/`catch` to code that might raise exceptions.
+    -   Use `finally` blocks to ensure resources are released.
+
+10. Code Organization
+    -   Group related code into methods/classes.
+    -   Use packages for logical organization; keep packages focused.
+    -   Avoid global variables; pass data explicitly.
+
+11. Additional Best Practices
+
+    11.1 Generics
+        -   Use generics to provide type safety.
+        -   Use wildcard types (`?`) for flexibility.
+
+    11.2 Lambdas and Streams (Java 8+)
+        -   Use lambdas for concise functional interfaces.
+        -   Use streams for efficient data processing.
+
+    11.3 Annotations
+        -   Use annotations for metadata (e.g., `@Override`, `@Deprecated`).
+
+    11.4 Testing
+        -   Write tests using JUnit or TestNG.
+        -   Use descriptive test names: `testFunctionHandlesInvalidInput`.
+        -   Aim for high coverage.
+
+    11.5 Code Formatting Tools
+        -   Use formatters: Google Java Format, Eclipse code formatter.
+        -   Configure in `.editorconfig` or IDE settings.
+
+    11.6 Version Control and Documentation
+        -   Use clear commit messages (e.g., "Add feature X").
+        -   Document APIs in Javadoc (Google/Standard format).
+        -   Include `README.md` with setup/usage instructions.
+
+    11.7 Performance and Readability
+        -   Prioritize readability over premature optimization.
+        -   Use appropriate data structures for efficiency.
+        -   Profile with profilers before optimizing.
+
+    11.8 Security
+        -   Avoid `eval()`/`exec()` with untrusted input.
+        -   Sanitize user inputs to prevent injection.
+        -   Use secure random number generators.
